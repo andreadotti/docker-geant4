@@ -16,8 +16,8 @@ g4data=$1
 g4src=$2
 shift 2
 img="andreadotti/geant4-dev"
-if [ $# -gt 2 ];then 
-  img=$1
+if [ $# -ge 1 ];then 
+      	img=$1
   shift 1
 fi
 
