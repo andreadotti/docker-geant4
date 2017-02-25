@@ -3,7 +3,8 @@ Geant4 Docker Images scripts and utilities
 
 
 Author: Andrea Dotti (adotti@slac.stanford.edu)  
-Copyright: Andrea Dotti (adotti@slac.stanford.edu) and the Geant4 Collaboration http://www.geant4.org 2016   
+Copyright: Andrea Dotti (adotti@slac.stanford.edu) and the Geant4 Collaboration
+ http://www.geant4.org 2016   
 License: Geant4 License http://www.geant4.org/geant4/license/LICENSE.html
 
 This set of scripts and utilities is designed to 
@@ -13,13 +14,14 @@ docker images for Geant4 applications.
 Images built using these set of scripts are
 published on docker hub under andreadotti repositories.
 
-The scripts allow to create everything from scratch since official Geant4 images are available you
-probably are interested only in the scripts to build your applications into images (Step 4).
+The scripts allow to create everything from scratch since official Geant4 images 
+are available you probably are interested only in the scripts to build your 
+applications into images (Step 4).
 
 Prebuild images
 --------------------
-Images managed and built by the Geant4 collaboraiton can be found on docker hub at:
-https://hub.docker.com/u/andreadotti/
+Images managed and built by the Geant4 collaboraiton can be found on docker 
+hub at: https://hub.docker.com/u/andreadotti/
 
 Directory Content:
 -----------------
@@ -54,10 +56,12 @@ Important Notes:
 **Note 1:** Docker tags are used to identify Geant4 releases. So for example
 `docker pull andreadotti/geant4:10.2.p02` will download  the docker image
 containing Geant4 Version 10.2.p02 runtime.  
-**Note 2:** Geant4 Databases are never included in docker images to keep the 
+**Note 2:** Geant4 Databases are in general not included in docker 
+images to keep their 
 size small. You should provide databases via a docker volume. Images expect
 files to be accessible at: */usr/local/geant4/data*. So:
-`docker run -v "/where/dbs/are/on/host:/usr/local/geant4/data:ro" [...]`  
+`docker run -v "/where/dbs/are/on/host:/usr/local/geant4/data:ro" [...]`. 
+Variants with database files are also produced. See: https://hub.docker.com/u/andreadotti/
 **Note 3:** docker tag *latest* is the last available G4 release. Note that this could
 be a reference tag. It is best to specify the Geant4 public release to run production 
 ready images.  
@@ -119,6 +123,9 @@ cd geant4-dev
 docker build -t geant4-env .
 cd ..
 ```
+**Note**: Provinding a location for databases is optional, see `README.md` file
+in geant4-dev dirctory for details.
+
 ### Step 3: (Optional) Build Geant4 runtime image 
 Copy tarball `geant4.tgz` from `geant4-dev/binaries` to 
 `geant4/binaries` and build the image:
@@ -139,6 +146,8 @@ of Geant4.
 For simplicity we assume the application code is located on the host under `/usr/app-src` 
 and Geant4 databases are located under `/usr/geant4/data` on the host. We want to develop
 against official images at https://hub.docker.com/r/andreadotti for G4 version 10.2.p02.  
+**Note**: Database files provided as volume is optional, provided that the image 
+contains G4 databases. See Step 2 notes.
 ```
 cd applications
 ./build-binaries.sh /usr/geant4/data /usr/app-src andreadotti/geant4-dev:10.2.p02
