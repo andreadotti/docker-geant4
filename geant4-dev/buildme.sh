@@ -18,9 +18,8 @@ cmake -DGEANT4_INSTALL_DATA=ON \
 make -j`nproc` 
 make install/fast
 cd /usr/local/geant4
-extraopt="--exclude='./data'"
 if [ "$1" == "--withdata" ];then 
-   extraopt=""
+   tar -czf /build/binaries/geant4.tgz .
+else
+   tar --exclude='./data' -czf /build/binaries/geant4.tgz .
 fi
-tar $extraopt -czf /build/binaries/geant4.tgz .
-
