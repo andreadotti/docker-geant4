@@ -82,7 +82,7 @@ The image layout is as following:
 ```
      baseImage (currently ubuntu:16.04)
          |
-     genat4-base (add runtime for Xerces-C and Expat)
+     geant4-base (add runtime for Xerces-C and Expat)
       /        \
       |       geant4-base-dev
       |         (add dev tools)
