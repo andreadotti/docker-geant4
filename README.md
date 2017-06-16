@@ -157,7 +157,8 @@ This will create tarballs using the official dev container specified on the comm
 the `binaries` sub-directory. Type `./build-binaries.sh` without options for a quick help.  
 Options can be passed including selecting a different name for the tarball. In this way it is 
 possible to create several tarballs of different applications that will all be combined in 
-a single executable image.
+a single executable image.  
+run: `./build-binaries.sh -h` for a list of options.  
 
 Now you are ready to create your own image with the applications and the Geant4 environment:
 ```
