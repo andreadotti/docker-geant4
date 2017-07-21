@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function usage() {
-   echo "Usage: $0 geant4-data-dir app-source-dir [dockerimage] [-d DOCKERCONF=VAL] [-c CMAKECONF=VAL ]"
+   echo "Usage: $0 [-d DOCKERCONF=VAL] [-c CMAKECONF=VAL ] geant4-data-dir app-source-dir [dockerimage]"
    echo "   geant4-data-dir: location on host of Geant4 DB filles"
    echo "   apps-source-dir: location of source of application"
    echo "   dockerimage: Geant4 DEVELOPMENT image (def: andreadotti/geant4-dev)"
