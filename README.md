@@ -162,7 +162,7 @@ run: `./build-binaries.sh -h` for a list of options.
 
 Now you are ready to create your own image with the applications and the Geant4 environment:
 ```
-./build-images.sh [-y] andreadotti/geant4:10.2.p02 myself/myApp
+./build-image.sh [-y] andreadotti/geant4:10.2.p02 myself/myApp
 ```
 This will generate a Dockerfile for your new image called *myself/myApp* with all applications
  tarballs found locally under *binaries*. If you do not need to change any default you can 
