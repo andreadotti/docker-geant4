@@ -27,7 +27,7 @@ $ ./build-binaries.sh /geant4-src /geant4-data
 $ docker build -t geant4-env .
 ```
 Data files (Geant4 DBs) are not included in the container images if a location
-of database files is bassed to the `build-binaries.sh` script (as in the
+of database files is passed to the `build-binaries.sh` script (as in the
 previous example). This helps in reducing container image size. If you want
 to achieve maximum portability (i.e. running container on a host w/o access
 to Geant4 DB) run the script omitting the database directory.  
