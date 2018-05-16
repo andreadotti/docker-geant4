@@ -24,8 +24,10 @@ respectively under */geant4-src* and */geant4-data*
 $ git clone git@github.com:andreadotti/docker-geant4.git
 $ cd docker-geant4/geant4-dev
 $ ./build-binaries.sh /geant4-src /geant4-data
-$ docker build -t geant4-env .
+$ docker build -t geant4-dev:X.Y.Z .
 ```
+Where `X.Y.Z` is the G4 version, used as tag for the image.
+
 Data files (Geant4 DBs) are not included in the container images if a location
 of database files is passed to the `build-binaries.sh` script (as in the
 previous example). This helps in reducing container image size. If you want
@@ -61,5 +63,14 @@ $ docker commit -m"Adding my application and Geant4 ver x.y.z" -a "MyName" ID re
 Containers with pre-built Geant4 images are available at <https://hub.docker.com/r/andreadotti/geant4-dev/>:
 ```
 docker pull andreadotti/geant4-dev:version
+```
+
+Push to registry
+----------------
+To publish image in the registry with username `abc`:
+
+```
+docker tag geant4-dev:X.Y.Z abc/geant4-dev:X.Y.Z
+docker push abc/geant4-dev:X.Y.Z
 ```
  
